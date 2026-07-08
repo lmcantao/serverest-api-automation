@@ -1,14 +1,32 @@
-target/
-.idea/
-.vscode/
-.settings/
+# Build and generated artifacts
+/target/
+/build/
+/out/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE and local editor settings
+/.idea/
+/.vscode/
+/.settings/
 .classpath
 .project
 *.iml
 
-allure-results/
-allure-report/
+# Test and report outputs
+/allure-results/
+/allure-report/
+/logs/
 
-logs/
-
+# Logs and temporary files
 *.log
+*.tmp
+*.temp
+
+# Dependency and environment local files
+/node_modules/
+.env
+.env.*
+.DS_Store
