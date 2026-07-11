@@ -9,14 +9,14 @@ public class ApiClient {
 
     public Response get(String endpoint) {
         return given()
-                .spec(RequestSpecificationFactory.defaultSpec())
+                .spec(RequestSpecificationFactory.unauthenticated())
                 .when()
                 .get(endpoint);
     }
 
     public Response post(String endpoint, Object body) {
         return given()
-                .spec(RequestSpecificationFactory.defaultSpec())
+                .spec(RequestSpecificationFactory.unauthenticated())
                 .body(body)
                 .when()
                 .post(endpoint);
@@ -24,7 +24,7 @@ public class ApiClient {
 
     public Response put(String endpoint, Object body) {
         return given()
-                .spec(RequestSpecificationFactory.defaultSpec())
+                .spec(RequestSpecificationFactory.unauthenticated())
                 .body(body)
                 .when()
                 .put(endpoint);
@@ -32,7 +32,7 @@ public class ApiClient {
 
     public Response delete(String endpoint) {
         return given()
-                .spec(RequestSpecificationFactory.defaultSpec())
+                .spec(RequestSpecificationFactory.unauthenticated())
                 .when()
                 .delete(endpoint);
     }
