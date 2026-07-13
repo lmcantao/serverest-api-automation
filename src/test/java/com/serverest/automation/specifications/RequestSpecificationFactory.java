@@ -1,6 +1,7 @@
 package com.serverest.automation.specifications;
 
 import com.serverest.automation.config.ConfigurationManager;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
@@ -16,6 +17,7 @@ public final class RequestSpecificationFactory {
                 .setBaseUri(ConfigurationManager.getBaseUrl())
                 .setContentType(ContentType.JSON)
                 .setAccept(ContentType.JSON)
+                .addFilter(new AllureRestAssured())
                 .log(LogDetail.ALL)
                 .build();
     }
@@ -26,6 +28,7 @@ public final class RequestSpecificationFactory {
                 .setContentType(ContentType.JSON)
                 .setAccept(ContentType.JSON)
                 .addHeader("Authorization", "Bearer " + token)
+                .addFilter(new AllureRestAssured())
                 .log(LogDetail.ALL)
                 .build();
     }
