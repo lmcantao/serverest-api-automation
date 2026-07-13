@@ -5,20 +5,22 @@ import net.datafaker.Faker;
 
 public final class UserFactory {
 
-    private static final Faker faker = new Faker();
+    private static final Faker FAKER = new Faker();
 
     private UserFactory() {
     }
 
-    public static User createDefaultUser() {
-
+    public static User validUser() {
         return User.builder()
-                .nome(faker.name().fullName())
-                .email(faker.internet().emailAddress())
-                .password("Teste@123")
+                .nome(FAKER.name().fullName())
+                .email(FAKER.internet().emailAddress())
+                .password(FAKER.internet().password(8, 16))
                 .administrador("true")
                 .build();
-
     }
 
+    public static User emptyUser() {
+        return User.builder()
+                .build();
+    }
 }
