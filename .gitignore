@@ -14,11 +14,13 @@
 .classpath
 .project
 *.iml
+.github/
 
 # Test and report outputs
 /allure-results/
 /allure-report/
 /logs/
+.allure/
 
 # Logs and temporary files
 *.log
