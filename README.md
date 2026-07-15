@@ -279,6 +279,12 @@ mvn clean test
 
 Neste projeto:
 
+Primeiro rode este comando para trazer as dependências:
+```bash
+mvn io.qameta.allure:allure-maven:2.15.0:serve
+```
+Depois este:
+
 ```bash
 ./.allure/allure-2.30.0/bin/allure serve target/allure-results
 ```
